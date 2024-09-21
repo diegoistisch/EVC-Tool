@@ -72,7 +72,14 @@ function Quiz() {
         <>
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-2">Frage {currentQuestion + 1}</h2>
-            <p className="text-lg">{currentQuestionData.question}</p>
+            <p className="text-lg mb-4">{currentQuestionData.question}</p>
+            {currentQuestionData.image && (
+              <img 
+                src={currentQuestionData.image} 
+                alt="Frage-Bild" 
+                className="w-full max-w-md mx-auto mb-4 rounded-lg shadow-md"
+              />
+            )}
             <p className="text-sm text-gray-500 mt-2">
               (Wählen Sie {currentQuestionData.correctAnswers.length} Antwort{currentQuestionData.correctAnswers.length > 1 ? 'en' : ''})
             </p>
